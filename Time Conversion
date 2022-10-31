@@ -1,0 +1,20 @@
+class Result {
+
+
+    public static String timeConversion(String s) {
+        String[] timeArray = s.split(":");
+        
+        String hours = timeArray[0];
+        String mins = timeArray[1];
+        String secs = timeArray[2].substring(0,2);
+        String dayOrEve = timeArray[2].substring(2,4);
+        
+        if (dayOrEve.equals("AM")) {
+            return ((hours.equals("12") ? "00" : hours) + ":" + mins + ":" + secs);
+        } 
+        else {
+            return  ((hours.equals("12")? hours : (Integer.parseInt(hours) + 12)) + ":" + mins + ":" + secs);
+        }
+        
+    }
+}
