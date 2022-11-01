@@ -1,0 +1,21 @@
+class Result {
+
+    public static int diagonalDifference(List<List<Integer>> arr) {
+        int Lsum=0, Rsum=0;
+        int n=arr.size();
+        for(int i=0;i<arr.size();i++){
+            for(int j=0;j<arr.get(i).size();j++){
+                if(i==j){
+                    Lsum += arr.get(i).get(j);
+                }
+                if((i+j)==n-1){
+                    Rsum += arr.get(i).get(j);
+                }
+            }
+        }
+        int difference = Lsum-Rsum;
+        int result =Math.abs(difference);
+        return result;
+    }
+
+}
